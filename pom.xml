@@ -32,27 +32,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-redis</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency> -->
-		<!-- <dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-mongodb</artifactId>
-			<version>1.2.0.RELEASE</version>
-		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -74,11 +53,6 @@
 			<artifactId>spring-cloud-cloudfoundry-connector</artifactId>
 			<version>${spring-cloud.version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-heroku-connector</artifactId>
-			<version>${spring-cloud.version}</version>
-		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-spring-service-connector</artifactId>
@@ -88,24 +62,6 @@
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-actuator</artifactId>
 	    </dependency>
-		<!-- <dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${postgres-driver.version}</version>
-			<scope>runtime</scope>
-		</dependency> -->
-
 		<dependency> 
 		  	<groupId>info.cukes</groupId> 
 		  	<artifactId>cucumber-junit</artifactId> 
@@ -223,11 +179,11 @@
 		<spring-cloud.version>1.1.0.BUILD-SNAPSHOT</spring-cloud.version>
 		<postgres-driver.version>9.0-801.jdbc4</postgres-driver.version>
 		<!-- [PIPELINE] -->
-		<distribution.management.release.id>artifactory-local</distribution.management.release.id>
+		<!-- <distribution.management.release.id>artifactory-local</distribution.management.release.id> -->
 		<!-- [PIPELINE] -->
-		<distribution.management.snapshot.url>http://localhost:8081/artifactory/libs-snapshot-local</distribution.management.snapshot.url>
-		<distribution.management.release.url>http://localhost:8081/artifactory/libs-release-local</distribution.management.release.url>
-		<application.url>www.sample.com</application.url>
+		<!-- <distribution.management.snapshot.url>http://localhost:8081/artifactory/libs-snapshot-local</distribution.management.snapshot.url>
+		<distribution.management.release.url>http://localhost:8081/artifactory/libs-release-local</distribution.management.release.url> -->
+		<!-- <application.url>www.sample.com</application.url> -->
 	</properties>
 
 	<build>
@@ -236,18 +192,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
-                <dependencies>
-                  <dependency>
-                    <groupId>org.apache.maven.surefire</groupId>
-                    <artifactId>surefire-junit47</artifactId>
-                    <version>2.19.1</version>
-                  </dependency>
-                </dependencies>
-            </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -276,20 +220,7 @@
 	</repositories>
 	
     <!-- [PIPELINE] -->
-    <!--distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>jfrog.sk-btv.com-releases</name>
-            <url>http://jfrog.sk-btv.com/artifactory/hello-spring-cloud-releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>jfrog.sk-btv.com-snapshots</name>
-            <url>http://jfrog.sk-btv.com/artifactory/hello-spring-cloud-snapshots</url>
-        </snapshotRepository>
-    </distributionManagement-->
-    <!-- [PIPELINE] -->
-	<distributionManagement>
+	<!-- <distributionManagement>
 		<repository>
 			<id>${distribution.management.release.id}</id>
 			<name>Spring Milestone Repository</name>
@@ -300,10 +231,9 @@
 			<name>Spring Snapshot Repository</name>
 			<url>${distribution.management.snapshot.url}</url>
 		</snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> -->
 	
-	
-	<pluginRepositories>
+	<!-- <pluginRepositories>
 		<pluginRepository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
@@ -320,6 +250,6 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories> -->
 
 </project>
