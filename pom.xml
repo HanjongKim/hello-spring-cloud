@@ -87,6 +87,13 @@
 		    <version>4.5.2</version>
 		  	<scope>test</scope> 
 		</dependency>
+		<!-- Unit Test Coverage Report -->
+		<dependency>
+            <groupId>org.codehaus.sonar-plugins.java</groupId>
+            <artifactId>sonar-jacoco-listeners</artifactId>
+            <version>3.1</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<profiles>
@@ -106,6 +113,69 @@
 								<include>helloworld/**/*Test.java</include>
 							</includes>
 						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>unit</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<includes>
+								<include>unit/**/*Tests.java</include>
+								<include>unit/**/*Test.java</include>
+							</includes>
+							<argLine>${jacoco.agent.ut.arg}</argLine>
+		                    <!-- Specific to generate mapping between tests and covered code -->
+		                    <properties>
+		                        <property>
+		                            <name>listener</name>
+		                            <value>org.sonar.java.jacoco.JUnitListener</value>
+                        		</property>
+                    		</properties>
+						</configuration>
+					</plugin>
+					<plugin>
+		                <groupId>org.jacoco</groupId>
+		                <artifactId>jacoco-maven-plugin</artifactId>
+		                <version>0.7.8</version>
+		                <executions>
+		                    <!-- Prepares a variable, jacoco.agent.ut.arg, that contains the info 
+		                        to be passed to the JVM hosting the code being tested. -->
+		                    <execution>
+		                        <id>prepare-ut-agent</id>
+		                        <phase>process-test-classes</phase>
+		                        <goals>
+		                            <goal>prepare-agent</goal>
+		                        </goals>
+		                        <configuration>
+		                            <destFile>target/jacoco.exec</destFile>
+		                            <propertyName>jacoco.agent.ut.arg</propertyName>
+		                            <append>true</append>
+		                        </configuration>
+		                    </execution>
+		                    <!-- Prepares a variable, jacoco.agent.it.arg, that contains the info 
+		                        to be passed to the JVM hosting the code being tested. -->
+		                    <execution>
+		                        <id>prepare-it-agent</id>
+		                        <phase>pre-integration-test</phase>
+		                        <goals>
+		                            <goal>prepare-agent</goal>
+		                        </goals>
+		                        <configuration>
+		                            <destFile>target/jacoco-it.exec</destFile>
+		                            <propertyName>jacoco.agent.it.arg</propertyName>
+		                            <append>true</append>
+		                        </configuration>
+		                    </execution>
+		                </executions>
 					</plugin>
 				</plugins>
 			</build>
@@ -233,7 +303,7 @@
 		</snapshotRepository>
 	</distributionManagement>
 	
-	<pluginRepositories>
+	<!-- <pluginRepositories>
 		<pluginRepository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
@@ -250,6 +320,6 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories> -->
 
 </project>
