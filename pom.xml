@@ -179,10 +179,10 @@
 		<spring-cloud.version>1.1.0.BUILD-SNAPSHOT</spring-cloud.version>
 		<postgres-driver.version>9.0-801.jdbc4</postgres-driver.version>
 		<!-- [PIPELINE] -->
-		<!-- <distribution.management.release.id>artifactory-local</distribution.management.release.id> -->
+		<distribution.management.release.id>artifactory-local</distribution.management.release.id>
 		<!-- [PIPELINE] -->
-		<!-- <distribution.management.snapshot.url>http://localhost:8081/artifactory/libs-snapshot-local</distribution.management.snapshot.url>
-		<distribution.management.release.url>http://localhost:8081/artifactory/libs-release-local</distribution.management.release.url> -->
+		<distribution.management.snapshot.url>http://localhost:8081/artifactory/hello-spring</distribution.management.snapshot.url>
+		<distribution.management.release.url>http://localhost:8081/artifactory/hello-spring</distribution.management.release.url>
 		<!-- <application.url>www.sample.com</application.url> -->
 	</properties>
 
@@ -220,7 +220,7 @@
 	</repositories>
 	
     <!-- [PIPELINE] -->
-	<!-- <distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>${distribution.management.release.id}</id>
 			<name>Spring Milestone Repository</name>
@@ -231,9 +231,9 @@
 			<name>Spring Snapshot Repository</name>
 			<url>${distribution.management.snapshot.url}</url>
 		</snapshotRepository>
-	</distributionManagement> -->
+	</distributionManagement>
 	
-	<!-- <pluginRepositories>
+	<pluginRepositories>
 		<pluginRepository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
@@ -250,6 +250,6 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
-	</pluginRepositories> -->
+	</pluginRepositories>
 
 </project>
