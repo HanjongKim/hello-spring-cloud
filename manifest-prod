@@ -1,0 +1,15 @@
+---
+applications:
+- name: hello-spring-cloud
+  memory: 512M
+  instances: 1
+  host: hello-sample
+#  domain: cfapps.io
+#  path: target/hello-spring-cloud-0.0.1-SNAPSHOT.jar
+#  services:
+#    - github-rabbitmq
+#    - github-eureka
+#    - mongodb-service
+#    - redis-service
+#  env:
+#    SPRING_PROFILES_DEFAULT: cloud
