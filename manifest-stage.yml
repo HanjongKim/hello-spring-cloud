@@ -3,8 +3,8 @@ applications:
 - name: hello-spring-cloud
   memory: 512M
   instances: 1
-  host: hello-sample-dev
-#  domain: cfapps.i
+  host: hello-sample-stage
+#  domain: cfapps.io
 #  path: target/hello-spring-cloud-0.0.1-SNAPSHOT.jar
 #  services:
 #    - github-rabbitmq
