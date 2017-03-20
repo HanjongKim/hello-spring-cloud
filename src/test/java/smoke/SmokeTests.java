@@ -23,7 +23,6 @@ public class SmokeTests {
 
 	private static final Log log = LogFactory.getLog(MethodHandles.lookup().lookupClass());
 
-	@Value("${stubrunner.url}") String stubRunnerUrl;
 	@Value("${application.url}") String applicationUrl;
 
 	TestRestTemplate testRestTemplate = new TestRestTemplate(HttpClientOption.SSL);
