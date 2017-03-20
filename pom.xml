@@ -303,24 +303,4 @@
 			<url>${distribution.management.snapshot.url}</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
-	<!-- <pluginRepositories>
-		<pluginRepository>
-			<id>org.springframework.maven.milestone</id>
-			<name>Spring Maven Milestone Repository</name>
-			<url>http://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>http://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories> -->
-
 </project>
