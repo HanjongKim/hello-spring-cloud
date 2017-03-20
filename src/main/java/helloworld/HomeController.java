@@ -11,6 +11,6 @@ public class HomeController {
     @RequestMapping("/")
     public String home(Model model) {
         
-        return "Hello Spring World-modify";
+        return "Hello Spring World-modifed";
     }
 }
